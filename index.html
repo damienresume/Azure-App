@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Azure App Service Classroom Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">☁️</div>
+        <div>
+          <h1>Azure App Service Classroom Demo</h1>
+          <p class="subtitle">One tiny site you can use to demo: Deployment • CD • Slots • Settings • Scaling • Monitoring</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip" title="Change this text for staging/production swap demos">VERSION: <strong id="version">v1</strong></span>
+        <span class="chip" title="Set via Application Settings; shown here conceptually">ENV: <strong id="env">Production</strong></span>
+        <span class="chip" title="Use 2 web apps in different regions for Traffic Manager">REGION: <strong id="region">India</strong></span>
+        <span class="chip" title="Set by CI/CD pipeline (optional)">BUILD: <strong id="build">local</strong></span>
+        <span class="chip" title="Slot name (optional)">SLOT: <strong id="slot">production</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>✅ Quick Demo Actions</h2>
+      <ol class="steps">
+        <li><strong>Automated Deployment (Dropbox)</strong>: Edit <code>index.html</code> → refresh site → see changes.</li>
+        <li><strong>Continuous Delivery (Azure DevOps)</strong>: Push changes → pipeline deploys → refresh site.</li>
+        <li><strong>Deployment Slots</strong>: Update staging to <code>VERSION: v2</code> → Swap → production shows v2.</li>
+        <li><strong>Application Settings</strong>: Add <code>ENV=Production</code> (or Dev/Test) → restart → explain how apps read env vars.</li>
+        <li><strong>Scaling</strong>: Scale Up/Out → generate refresh traffic → observe Metrics/Requests.</li>
+        <li><strong>Monitoring</strong>: Open Metrics + Logs + App Insights → show Requests, Failures, Response time.</li>
+      </ol>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>📌 What students should notice</h3>
+        <ul>
+          <li>Every time you change text here, it becomes a visible proof of deployment.</li>
+          <li>Slots allow safe testing without affecting users.</li>
+          <li>Settings are configuration, not code.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🧪 “Make it fail” (safe)</h3>
+        <p>For a quick diagnostics demo, temporarily edit the line below to show an “error banner” and then remove it.</p>
+        <div class="banner" id="banner" role="status">
+          <strong>Status:</strong> <span id="statusText">OK</span>
+        </div>
+        <button class="btn" id="toggleBtn" type="button">Toggle “Issue” Banner</button>
+        <p class="hint">This is client-side only (safe). Great for showing “change → deploy → verify”.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🧾 Demo Checklist (what you can say)</h2>
+      <div class="checklist">
+        <label><input type="checkbox"> I can show the web app URL in Azure App Service Overview.</label>
+        <label><input type="checkbox"> I can edit <code>index.html</code> and demonstrate auto-update.</label>
+        <label><input type="checkbox"> I can show a pipeline run in Azure DevOps.</label>
+        <label><input type="checkbox"> I can create <code>staging</code> slot and perform a Swap.</label>
+        <label><input type="checkbox"> I can add <code>ENV</code> setting and explain “config vs code”.</label>
+        <label><input type="checkbox"> I can open Metrics and show CPU / Requests / Response time.</label>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Tip: Keep production as <strong>v1</strong> and staging as <strong>v2</strong>. Swap to impress the class.
+      </p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
