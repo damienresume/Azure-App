@@ -10,6 +10,6 @@
   btn.addEventListener("click", () => {
     bad = !bad;
     banner.classList.toggle("bad", bad);
-    statusText.textContent = bad ? "Simulated Issue (Demo)" : "This is Damien and everything is working ..OK";
+    statusText.textContent = bad ? "Simulated Issue (Demo)" : "OK";
   });
 })();
